@@ -15,6 +15,7 @@ alias ..="cd .."
 ## shortcuts
 alias g="git"
 alias mk="mkdir"
+alias wo="pwd"
 
 ## dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
