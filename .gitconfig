@@ -10,6 +10,6 @@
 
 	sh = push
 
-	co = commit
+	co = "git commit -m"
 
 	cl = clone 
