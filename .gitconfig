@@ -1,0 +1,15 @@
+[user]
+	email = karamanhunor@protonmail.com
+
+[alias]
+	st = status
+
+	ll = pull
+
+	a = !git add -A
+
+	sh = push
+
+	co = commit
+
+	cl = clone 
