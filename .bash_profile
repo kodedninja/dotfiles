@@ -7,6 +7,9 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Documents ->
 export PS1="\[\033[36m\]\W\[\033[m\] → "
 
+# deno
+export PATH="/Users/hunor/.deno/bin:$PATH"
+
 # aliases
 
 ## navigation
