@@ -19,6 +19,7 @@ alias ..="cd .."
 alias g="git"
 alias mk="mkdir"
 alias wo="pwd"
+alias npr="npm run"
 
 ## dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -67,3 +68,4 @@ github-create() {
  echo " done."
 }
 
+export PATH="$HOME/.cargo/bin:$PATH"
