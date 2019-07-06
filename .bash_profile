@@ -24,6 +24,9 @@ alias npr="npm run"
 ## dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# python
+alias python='python3'
+
 # create repo on github and push master
 
 github-create() {
@@ -69,3 +72,5 @@ github-create() {
 }
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export EDITOR="/usr/local/bin/micro"
