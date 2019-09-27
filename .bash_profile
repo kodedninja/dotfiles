@@ -20,6 +20,7 @@ alias g="git"
 alias mk="mkdir"
 alias wo="pwd"
 alias npr="npm run"
+alias l="exa"
 
 ## dotfiles from (https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
