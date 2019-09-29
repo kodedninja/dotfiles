@@ -1,6 +1,7 @@
 # configs
 
 set-option global tabstop 2
+add-highlighter global/ number-lines
 
 # Kakoune clipboard to system clipboard
 hook global NormalKey y|d|c %{ nop %sh{
