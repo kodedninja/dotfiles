@@ -1,0 +1,14 @@
+# configs
+
+set-option global tabstop 2
+
+# Kakoune clipboard to system clipboard
+hook global NormalKey y|d|c %{ nop %sh{
+	printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+}}
+
+# load plug
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+# load plugins
+source "%val{config}/plugins.kak"
