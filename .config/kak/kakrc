@@ -4,11 +4,6 @@ set-option global tabstop 2
 set-option global indentwidth 2
 add-highlighter global/ number-lines
 
-# Kakoune clipboard to system clipboard
-hook global NormalKey y|d|c %{ nop %sh{
-	printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
-}}
-
 # jj to escape 
 hook global InsertChar j %{ try %{
   exec -draft hH <a-k>jj<ret> d

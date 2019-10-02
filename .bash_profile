@@ -74,7 +74,8 @@ github-create() {
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export EDITOR="/usr/local/bin/micro"
+export EDITOR="/usr/local/bin/kak"
 
 # z
 . ~/z/z.sh
+
