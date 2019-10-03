@@ -26,7 +26,9 @@ plug "occivink/kakoune-snippets" config %{
     unmap window insert '<ret>' "z<a-;>: snippets-expand-or-jump 'ret'<ret>"
   }
 
-  define-command snippets-expand-or-jump -params 1 %{
+  source "%val{config}/snippets.kak"
+
+	define-command snippets-expand-or-jump -params 1 %{
     execute-keys <backspace>
     try %{ snippets-expand-trigger %{
       set-register / "%opt{snippets_triggers_regex}\z"
