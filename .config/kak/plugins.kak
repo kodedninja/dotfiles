@@ -1,7 +1,7 @@
 # edit or dir
 plug "TeddyDD/kakoune-edit-or-dir" %{
-	unalias global e
-	alias global e edit-or-dir
+  unalias global e
+  alias global e edit-or-dir
 }
 
 # system clipboard to kakoune clipboard
@@ -12,8 +12,8 @@ plug "lePerdu/kakboard" %{
 # snippets
 plug "occivink/kakoune-snippets" config %{
   set-option global snippets_auto_expand false
-  map global insert '<tab>' "z<a-;>: snippets-expand-or-jump 'tab'<ret>"
   map global normal '<tab>' ": snippets-expand-or-jump 'tab'<ret>"
+  map global insert '<tab>' "z<a-;>: snippets-expand-or-jump 'tab'<ret>"
 
   hook global InsertCompletionShow .* %{
     try %{
@@ -26,9 +26,10 @@ plug "occivink/kakoune-snippets" config %{
     unmap window insert '<ret>' "z<a-;>: snippets-expand-or-jump 'ret'<ret>"
   }
 
+  # load snippets from snippets file
   source "%val{config}/snippets.kak"
 
-	define-command snippets-expand-or-jump -params 1 %{
+  define-command snippets-expand-or-jump -params 1 %{
     execute-keys <backspace>
     try %{ snippets-expand-trigger %{
       set-register / "%opt{snippets_triggers_regex}\z"
@@ -41,4 +42,22 @@ plug "occivink/kakoune-snippets" config %{
       nop
     }
   }
+}
+
+# move lines
+plug "alexherbo2/move-line.kak" config %{
+  map global normal "'" ': move-line-below %val{count}<ret>'
+  map global normal "<a-'>" ': move-line-above %val{count}<ret>'
+}
+
+plug "andreyorst/smarttab.kak" defer smarttab %{
+  # when `backspace' is pressed, 2 spaces are deleted at once
+  set-option global softtabstop 2
+} config %{
+  # these languages will use `expandtab' behavior
+  hook global WinSetOption filetype=(rust|markdown|kak|sh|javascript) expandtab
+  # these languages will use `noexpandtab' behavior
+  hook global WinSetOption filetype=(makefile|gas|python) noexpandtab
+  # these languages will use `smarttab' behavior
+  hook global WinSetOption filetype=(c|cpp) smarttab
 }
