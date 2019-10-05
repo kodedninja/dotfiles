@@ -1,0 +1,7 @@
+title: $1
+----
+date: today$2
+----
+lecture: $3
+----
+text: $0
