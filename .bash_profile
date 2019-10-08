@@ -10,6 +10,9 @@ export PS1="\[\033[36m\]\W\[\033[m\] → "
 # deno
 export PATH="/Users/hunor/.deno/bin:$PATH"
 
+# editor
+export EDITOR="/usr/local/bin/kak"
+
 # aliases
 
 ## navigation
@@ -22,6 +25,7 @@ alias wo="pwd"
 alias npr="npm run"
 alias l="exa"
 alias t="exa -T"
+alias e="$EDITOR"
 
 ## dotfiles from (https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -74,8 +78,6 @@ github-create() {
 }
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
-export EDITOR="/usr/local/bin/kak"
 
 # z
 . ~/z/z.sh
