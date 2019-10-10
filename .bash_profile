@@ -82,3 +82,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # z
 . ~/z/z.sh
 
+# shut up macos
+export BASH_SILENCE_DEPRECATION_WARNING=1
