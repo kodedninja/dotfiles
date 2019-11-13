@@ -13,6 +13,17 @@ hook global InsertChar j %{ try %{
 # highlight current line
 hook global WinCreate ^[^*]+$ %{ add-highlighter window/ number-lines -hlcursor }
 
+# show current cursor percentage in file
+declare-option str modeline_pos_percent
+
+hook global WinCreate .* %{
+    hook window NormalIdle .* %{ evaluate-commands %sh{
+        echo "set window modeline_pos_percent '$(($kak_cursor_line * 100 / $kak_buf_line_count))'"
+    } }
+}
+
+set global modelinefmt '%val{bufname} | %val{cursor_line}:%val{cursor_char_column} | %opt{modeline_pos_percent}%% | {{context_info}} {{mode_info}} | %sh{bs=${kak_buflist//[^:]};echo $((${#bs}+1))} buf'
+
 # load plug
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
