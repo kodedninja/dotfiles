@@ -78,9 +78,12 @@ github-create() {
 }
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/code/go/bin:$PATH"
 
 # z
 . ~/z/z.sh
 
 # shut up macos
 export BASH_SILENCE_DEPRECATION_WARNING=1
+# remove multiprocessing limit
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
