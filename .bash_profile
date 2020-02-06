@@ -77,11 +77,14 @@ github-create() {
  echo " done."
 }
 
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/code/go/bin:$PATH"
 
 # z
 . ~/z/z.sh
+
+export GOPATH="$HOME/code/go"
 
 # shut up macos
 export BASH_SILENCE_DEPRECATION_WARNING=1

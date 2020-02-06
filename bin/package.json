@@ -1,0 +1,8 @@
+{
+  "name": "dotfiles-bin",
+  "version": "1.0.0",
+  "description": "Collecting bin node dependencies",
+  "dependencies": {
+    "kindlequotes": "^0.3.0"
+  }
+}

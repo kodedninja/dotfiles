@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# mostly based on https://github.com/frnsys/dippindots/blob/master/bin/kobo
+
+CMD=$1
+
+if [[ -z $CMD ]]; then
+  echo "No command specified. Commands: [sync]."
+  exit 1
+elif [ $CMD == 'sync' ]; then
+	KINDLEPATH=$(ls /Volumes | grep Kindle)
+  if [[ -z ${KINDLEPATH} ]]; then
+      echo "Kindle doesn't seem to be plugged in"
+      exit 1
+  fi
+
+  echo "Moving books to Kindle..."
+	# if my kindle library gets clean replace it with hard sync
+  # rsync --delete --exclude=read -ravu ~/docs/library/epubs/kobo /media/usb/books/
+	rsync -rvu ~/Documents/Books/Kindle /Volumes/Kindle/documents/
+
+  echo "Syncing annotations from Kindle..."
+  sudo cp "/Volumes/Kindle/documents/My Clippings.txt" /tmp/kindle-clippings.txt
+	kindle-to-hili /tmp/kindle-clippings.txt ~/mem/highlights/annos.json
+else
+  e "Unrecognized command"
+fi

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3 ~/tools/hili/server.py ~/mem/highlights/annos.json ~/mem/highlights/files -p 7979
