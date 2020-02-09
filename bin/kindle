@@ -14,9 +14,16 @@ elif [ $CMD == 'sync' ]; then
       exit 1
   fi
 
+	echo "Generating mobi files from epub..."
+	for filename in ~/Documents/Books/Kindle/*.epub; do
+		[ -e "$filename" ] || continue
+		
+		/Applications/calibre.app/Contents/MacOS/ebook-convert "$filename" "/Users/hunor/Documents/Books/Kindle/$(basename "$filename" .epub).mobi"
+		rm "$filename"
+	done
+
   echo "Moving books to Kindle..."
-	# if my kindle library gets clean replace it with hard sync
-  # rsync --delete --exclude=read -ravu ~/docs/library/epubs/kobo /media/usb/books/
+	# if my kindle library gets clean replace it with hard sync: rsync --delete --exclude=read -ravu ~/docs/library/epubs/kobo /media/usb/books/
 	rsync -rvu ~/Documents/Books/Kindle /Volumes/Kindle/documents/
 
   echo "Syncing annotations from Kindle..."

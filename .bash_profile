@@ -33,6 +33,9 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # python
 alias python='python3'
 
+# calibre ebook-convert
+alias 'ebook-convert'='/Applications/calibre.app/Contents/MacOS/ebook-convert'
+
 # create repo on github and push master
 
 github-create() {
