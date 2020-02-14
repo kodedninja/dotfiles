@@ -44,8 +44,8 @@ for (var i = 0; i < fromKindle.length; i++) {
 	var newOne = fromKindle[i]
 
 	for (var j = 0; j < fromHili.length; j++) {
-		if (newOne.time <= fromHili[j].time) {
-			fromHili.splice(j, 0, newOne)
+		if (newOne.time >= fromHili[j].time) {
+			fromHili.splice(j + 1, 0, newOne)
 			newCounter++
 			break
 		}
