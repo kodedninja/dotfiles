@@ -1,0 +1,5 @@
+\begin{figure}[${1:htpb}]
+	\includegraphics[width=0.8\textwidth]{$2}
+	\caption{$3}
+	\label{fig:$4}
+\end{figure}$0

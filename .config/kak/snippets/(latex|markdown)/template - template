@@ -1,0 +1,14 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+
+\title{$1}
+\author{Hunor Karamán}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+$0
+\end{document}
+

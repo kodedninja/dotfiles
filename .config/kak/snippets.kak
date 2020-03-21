@@ -19,3 +19,22 @@ define-command -hidden fraction-snippet-2 %{
 }
 set-option -add global snippets 'fraction' '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' fraction-snippet-2
 
+define-command -hidden to-snippet %{
+  snippets-insert "\to"
+}
+set-option -add global snippets 'to' '->' to-snippet
+
+define-command -hidden left-right-arrow-snippet %{
+  snippets-insert "\leftrightarrow"
+}
+set-option -add global snippets 'left right arrow' '<->' left-right-arrow-snippet
+
+define-command -hidden implies-snippet %{
+  snippets-insert "\implies"
+}
+set-option -add global snippets 'implies' '=>' implies-snippet
+
+define-command -hidden equivalent-snippet %{
+   snippets-insert "\Leftrightarrow"
+}
+set-option -add global snippets 'equivalent' '<=>' equivalent-snippet
