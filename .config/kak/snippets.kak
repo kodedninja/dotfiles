@@ -38,3 +38,8 @@ define-command -hidden equivalent-snippet %{
    snippets-insert "\Leftrightarrow"
 }
 set-option -add global snippets 'equivalent' '<=>' equivalent-snippet
+
+define-command -hidden parenthesis-snippet %{
+  snippets-insert "\left( $1 \right)$0"
+}
+set-option -add global snippets 'parenthesis' '()' parenthesis-snippet

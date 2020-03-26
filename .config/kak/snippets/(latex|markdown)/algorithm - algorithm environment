@@ -1,0 +1,8 @@
+\begin{algorithm}[H]
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  
+  \Input{$1}
+  \Output{$2}
+  \BlankLine
+  $3
+\end{algorithm}
