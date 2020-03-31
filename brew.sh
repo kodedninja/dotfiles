@@ -12,6 +12,7 @@ brew install fd
 brew install kakoune
 brew install pandoc
 brew install wifi-password
+brew install you-get
 
 # cask
 brew cask install rectangle
