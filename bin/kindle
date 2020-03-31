@@ -27,8 +27,7 @@ elif [ $CMD == 'sync' ]; then
 	rsync -rvu ~/Documents/Books/Kindle /Volumes/Kindle/documents/
 
   echo "Syncing annotations from Kindle..."
-  sudo cp "/Volumes/Kindle/documents/My Clippings.txt" /tmp/kindle-clippings.txt
-	kindle-to-hili /tmp/kindle-clippings.txt ~/mem/highlights/annos.json
+	kindle-extractor
 else
   e "Unrecognized command"
 fi
