@@ -24,6 +24,12 @@ hook global WinCreate .* %{
 
 set global modelinefmt '%val{bufname} | %val{cursor_line}:%val{cursor_char_column} | %opt{modeline_pos_percent}%% | {{context_info}} {{mode_info}} | %sh{bs=${kak_buflist//[^:]};echo $((${#bs}+1))} buf'
 
+def -docstring "use 4 spaces for tabs" spaces4 %{
+  expandtab
+  set-option window tabstop 4
+  set-option window indentwidth 4
+}
+
 # load plug
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
